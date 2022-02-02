@@ -1,0 +1,12 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: fit-content;
+}
+.agenda {
+    background: #F2994A;
+    border: 1px solid #E0812C;
+    color: #FFFFFF;    
+}
