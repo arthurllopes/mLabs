@@ -1,23 +1,29 @@
 .actionFooter {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
+
+    background-color: #FFFFFF;
 }
-.cancelBtnDiv {
-    background: #F2994A;
-    border: 1px solid #E0812C;
-    color: #FFFFFF;
-    
-    
-    border-radius: 4px;
+.buttons {
     display: flex;
-    margin: 0 auto;
-    padding: 8px 24px;
-    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px;
 }
-.saveBtnDiv {
-    
+.cancel {
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    color: #2F80ED;
 }
-.confirmBtnDiv {
-    
+.save {
+    background: #FFFFFF;
+    border: 1px solid #2F80ED;
+    color: #2F80ED;
+    margin: 0 1rem;
+}
+.confirm {
+    background: #2F80ED;
+    border: 1px solid #2F80ED;
+    color: #FFFFFF;
 }

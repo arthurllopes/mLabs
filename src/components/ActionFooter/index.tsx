@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 const ActionFooter = () => {
   return (
     <footer className={styles.actionFooter}>
-        <div>
+        <div className={styles.buttons}>
             <div className={`${styles.cancel} btn-div`} >
                 <button>
                     Cancelar
