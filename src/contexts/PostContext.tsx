@@ -17,7 +17,7 @@ type PostContextType = {
     img: {
       preview: any;
       raw: any;
-    } | {},
+    } | undefined,
     setImg: any,
     dateError: boolean,
     setDateError: any,
@@ -31,7 +31,7 @@ export function PostContextProvider(props: PostContextProviderProps) {
     const [social, setSocial] = useState<SocialApp | undefined>()
     const [text, setText] = useState<string>('')
     const [date, setDate] = useState<DateTime>({date: '', time: ''})
-    const [ img, setImg ] = useState({})
+    const [ img, setImg ] = useState()
 
     const [dateError, setDateError] = useState(false)
     const [modal, setModal] = useState<boolean>(false);

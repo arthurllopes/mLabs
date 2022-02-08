@@ -8,11 +8,11 @@ import { PostContext } from '../../contexts/PostContext';
 const ImageUpload = () => {
   const {setImg} = useContext(PostContext)
 
-  function handleImgChange(e: any){
+  function handleImgChange({target}: any){
 
     setImg({
-      preview: URL.createObjectURL(e.target.files[0]),
-      raw: e.target.files[0],
+      preview: URL.createObjectURL(target.files[0]),
+      raw: target.files[0],
     })
   }
   return (
@@ -28,6 +28,9 @@ const ImageUpload = () => {
                 <label className={`${styles.searchImage} btn`} htmlFor="image">Pesquisar imagem</label>
                 <input className={`${styles.inputFile}`} type="file" name="image" id="image" accept="image/*" onChange={handleImgChange}/>
             </div>
+        </div>
+        <div>
+
         </div>
     </Card>
   );

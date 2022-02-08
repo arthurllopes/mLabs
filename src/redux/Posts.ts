@@ -1,6 +1,14 @@
 import { AnyAction, createSlice, PayloadAction, ThunkAction } from "@reduxjs/toolkit";
+import { SocialApp } from "../pages/scheduling";
 import { RootState } from "./configureStore";
 
+type SocialPost = {
+    id: number;
+    date: any,
+    social: any,
+    img: any,
+    status: string
+}
 
 const slice = createSlice({
     name: 'Cart',
