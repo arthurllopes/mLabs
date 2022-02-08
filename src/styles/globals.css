@@ -14,14 +14,13 @@ a {
   color: inherit;
   text-decoration: none;
 }
-.btn-div {
+.btn {
   border-radius: 4px;
   padding: 8px 24px;
-  display: flex;
   margin: 0 auto;
   cursor: pointer;
 }
-.btn-div:hover {
+.btn:hover {
   filter: brightness(0.9); 
 }
 button {

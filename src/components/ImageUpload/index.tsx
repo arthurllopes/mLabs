@@ -14,8 +14,8 @@ const ImageUpload = () => {
             <div className={styles.text}>
               <p style={{color:'#828282', textAlign: 'center'}}>Arraste e solte uma imagem aqui ou clique no botão abaixo</p>
             </div>
-            <div className={`${styles.searchImage} btn-div`}>
-              <button>
+            <div className={`${styles.searchImage} btn`}>
+              <button >
                 Pesquisar imagem
               </button>
             </div>

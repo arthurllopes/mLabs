@@ -10,21 +10,15 @@ const ActionFooter = () => {
   return (
     <footer className={styles.actionFooter}>
         <div className={styles.buttons}>
-            <div className={`${styles.cancel} btn-div`} >
-                <button>
+                <button className={`${styles.cancel} btn`}>
                     Cancelar
                 </button>
-            </div>
-            <div className={`${styles.save} btn-div`} >
-                <button>
+                <button className={`${styles.save} btn`}>
                     Salvar rascunho
                 </button>
-            </div>
-            <div className={`${styles.confirm} btn-div`} onClick={handleSchedule} >
-                <button >
+                <button className={`${styles.confirm} btn`} onClick={handleSchedule}>
                     Agendar
                 </button>
-            </div>
         </div>
     </footer>
   );

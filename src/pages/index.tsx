@@ -22,8 +22,8 @@ const Home: NextPage = () => {
         <div className={styles.postsImage}>
           <Image src={Posts} width={280} height={440} alt="Posts Image" objectFit='contain' />
         </div>
-        <div className={`${styles.agenda} btn-div`} onClick={() => router.push('/scheduling')}>
-          <button>
+        <div>
+          <button className={`${styles.agenda} btn`} onClick={() => router.push('/scheduling')}>
             Agendar post
           </button>
         </div>
