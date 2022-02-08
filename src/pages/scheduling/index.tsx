@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 import ActionFooter from '../../components/ActionFooter';
@@ -6,34 +7,31 @@ import Header from '../../components/Header';
 import ImageUpload from '../../components/ImageUpload';
 import PostPreview from '../../components/PostPreview';
 import PostText from '../../components/PostText';
+import PublicationDate from '../../components/PublicatioDate';
+import SocialMediaSelect from '../../components/SocialMediaSelect';
 import styles from './styles.module.css'
 
 const SchedulingPage = () => {
   return (
         <>
+            <Head>
+                <title>mLabs</title>
+            </Head>
             <Header />
             <main className={styles.mainContainer}>
                 <div className="post info">
                     <div className={styles.postInfo}>
-                        <Card title="Redes sociais">
-                            <div>
-
-                            </div>
-                        </Card>
-                        <Card title="Data de publicação">
-                            <div>
-                                
-                            </div>
-                        </Card>
+                        <SocialMediaSelect />
+                        <PublicationDate />
                     </div>
-                    <div className="area">
+                    <div className="">
                         <PostText />
                     </div>
-                    <div className="area">
+                    <div className="">
                         <ImageUpload />
                     </div>
                 </div>
-                <div className="visu">
+                <div className="">
                     <PostPreview />
                 </div>
             </main>

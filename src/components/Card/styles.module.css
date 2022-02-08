@@ -1,0 +1,13 @@
+.cardContainer {
+    background-color: #fff;
+    border-radius: 4px;
+    margin: .5em;
+}
+.cardTitle {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 0.5em 1em;
+    margin: 0;
+}
+.cardContent {
+    padding: 1em;
+}

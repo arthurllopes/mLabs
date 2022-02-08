@@ -1,12 +1,11 @@
 import React from 'react';
 import Card from '../Card';
+import styles from './styles.module.css'
 
 const PostText = () => {
   return (
     <Card title="Texto do post">
-        <div>
-            <input type="text" placeholder="Aqui vai o texto descritivo desse post" />
-        </div>
+        <textarea className={styles.container} placeholder="Aqui vai o texto descritivo desse post"></textarea>
     </Card>
   );
 };
