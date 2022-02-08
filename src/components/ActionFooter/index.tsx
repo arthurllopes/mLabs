@@ -14,7 +14,8 @@ const ActionFooter = () => {
             social,
             date,
             img,
-            status: 'Agendado'
+            status: 'Agendado',
+            text
         }))
     }
   return (

@@ -3,19 +3,19 @@
     flex-direction: column;
     justify-content: center;
     padding: 2em 1em;
+    overflow-x: scroll;
 }
 .tableContainer {
-    border-spacing: 0 .875rem;
-    border: 1px solid black;
     border-collapse: collapse;
-    border-color: black;
+    min-width: 786px;
+    overflow-x: scroll;
 }
 .tableHeader{
     background-color: #fff;
     text-align: left;
     
 }
-.rowItem {
+.rowItem, .link {
     padding: .5em;
     border: 2px solid;
     border-color: #eee;
@@ -26,4 +26,29 @@
 .link {
     color: #1661F3;
     text-decoration: underline;
+    cursor: pointer;
+}
+.text {
+    word-break: break-all;
+}
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #BDBDBD;
+    padding: 8px;
+    margin: 0 6px;
+    background-color: #fff;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+}
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }

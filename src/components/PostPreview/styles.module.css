@@ -38,8 +38,6 @@
     width: 60%;
 }
 .text {
-    white-space: wrap;
-    max-width: 100%;
     word-break: break-all;
 }
 

@@ -2,12 +2,13 @@ import { AnyAction, createSlice, PayloadAction, ThunkAction } from "@reduxjs/too
 import { SocialApp } from "../pages/scheduling";
 import { RootState } from "./configureStore";
 
-type SocialPost = {
+export type SocialPost = {
     id: number;
     date: any,
     social: any,
     img: any,
-    status: string
+    status: string,
+    text: string
 }
 
 const slice = createSlice({

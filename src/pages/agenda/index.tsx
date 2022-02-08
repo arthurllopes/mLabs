@@ -1,18 +1,13 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Header from '../../components/Header';
 import { RootState } from '../../redux/configureStore';
+import { SocialPost } from '../../redux/Posts';
 import { SocialApp } from '../scheduling';
 import styles from './styles.module.css'
 
-export type PostSchedule = {
-    id: number,
-    social: SocialApp | SocialApp[],
-    media: any,
-    text: string,
-    date: string,
-    status: string,
-}
 const SchedulePage = () => {
     const { posts } = useSelector((state: RootState) => state.Posts)
   return (
@@ -32,12 +27,20 @@ const SchedulePage = () => {
                         </tr>
                     </thead>
                     <tbody className={styles.tableBody}>
-                        {posts.map((post: PostSchedule) => (
+                        {posts?.map((post: SocialPost) => (
                             <tr key={post.id}>
-                                <td className={styles.rowItem}>{post.social}</td>
-                                <td className={styles.rowItem}>{post.media}</td>
-                                <td className={styles.rowItem}>{post.text}</td>
-                                <td className={styles.rowItem}>{post.date}</td>
+                                <td className={`${styles.rowItem}`}>
+                                    <div className={styles.icon}>
+                                        {//@ts-ignore
+                                            <FontAwesomeIcon icon={['fab', `${post.social?.icon}`]}/>
+                                        }
+                                    </div>
+                                </td>
+                                <td className={`${styles.rowItem} ${styles.image}`}>
+                                    <Image src={post.img?.preview} width={100} height={120} alt="post image" objectFit='contain'/>
+                                </td>
+                                <td className={`${styles.rowItem} ${styles.text}`}>{post.text}</td>
+                                <td className={styles.rowItem}>{post.date.date}/20 ás {post.date.time}</td>
                                 <td className={styles.link}>Preview</td>
                                 <td className={styles.rowItem}>{post.status}</td>
                             </tr>
