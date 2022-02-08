@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ModalContext } from '../../contexts/ModalContext';
 import styles from './styles.module.css'
 
 const ActionFooter = () => {
+    const {setModal} = useContext(ModalContext)
+    function handleSchedule () {
+        setModal(true)
+    }
   return (
     <footer className={styles.actionFooter}>
         <div className={styles.buttons}>
@@ -15,8 +20,8 @@ const ActionFooter = () => {
                     Salvar rascunho
                 </button>
             </div>
-            <div className={`${styles.confirm} btn-div`} >
-                <button>
+            <div className={`${styles.confirm} btn-div`} onClick={handleSchedule} >
+                <button >
                     Agendar
                 </button>
             </div>

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import React from 'react';
+import React, { useContext } from 'react';
 import ActionFooter from '../../components/ActionFooter';
 import Card from '../../components/Card';
 import Header from '../../components/Header';
@@ -10,8 +10,12 @@ import PostText from '../../components/PostText';
 import PublicationDate from '../../components/PublicatioDate';
 import SocialMediaSelect from '../../components/SocialMediaSelect';
 import styles from './styles.module.css'
+import SucessModal from '../../components/SucessModal';
+import { ModalContext } from '../../contexts/ModalContext';
 
 const SchedulingPage = () => {
+    const {modal} = useContext(ModalContext)
+
   return (
         <>
             <Head>
@@ -36,6 +40,7 @@ const SchedulingPage = () => {
                 </div>
             </main>
             <ActionFooter />
+            {modal && <SucessModal />}
         </>
     );
 };

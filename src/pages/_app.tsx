@@ -12,6 +12,7 @@ import {
   faTwitter
 } from '@fortawesome/free-brands-svg-icons';
 import { faCalendarDay, faClock } from '@fortawesome/free-solid-svg-icons';
+import { ModalContextProvider } from '../contexts/ModalContext';
 
 library.add(fab,faLinkedin,
   faInstagram,
@@ -24,7 +25,11 @@ library.add(fab,faLinkedin,
 )
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ModalContextProvider>
+      <Component {...pageProps} />
+    </ModalContextProvider>
+    )
 }
 
 export default MyApp
