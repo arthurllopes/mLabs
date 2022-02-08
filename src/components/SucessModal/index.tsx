@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import React, { useContext } from 'react';
-import { ModalContext } from '../../contexts/ModalContext';
+import { PostContext } from '../../contexts/PostContext';
 import styles from './styles.module.css'
 import modalImage from '../../assets/images/modalImage.png'
 import { useRouter } from 'next/router';
 
 const SucessModal = () => {
   const router = useRouter()
-  const {modal, setModal} = useContext(ModalContext)
+  const {modal, setModal} = useContext(PostContext)
   function handleOutsideClick (event: React.MouseEvent){
     if (event.target === event.currentTarget) setModal(false)
   }

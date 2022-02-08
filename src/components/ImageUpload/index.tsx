@@ -1,10 +1,20 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useContext } from 'react';
 import Card from '../Card';
 import styles from './styles.module.css'
 import uploadImage from '../../assets/images/upload.png'
+import { PostContext } from '../../contexts/PostContext';
 
 const ImageUpload = () => {
+  const {setImg} = useContext(PostContext)
+
+  function handleImgChange(e: any){
+
+    setImg({
+      preview: URL.createObjectURL(e.target.files[0]),
+      raw: e.target.files[0],
+    })
+  }
   return (
     <Card title="Upload de imagem">
         <div className={styles.container}>
@@ -14,10 +24,9 @@ const ImageUpload = () => {
             <div className={styles.text}>
               <p style={{color:'#828282', textAlign: 'center'}}>Arraste e solte uma imagem aqui ou clique no botão abaixo</p>
             </div>
-            <div className={`${styles.searchImage} btn`}>
-              <button >
-                Pesquisar imagem
-              </button>
+            <div>
+                <label className={`${styles.searchImage} btn`} htmlFor="image">Pesquisar imagem</label>
+                <input className={`${styles.inputFile}`} type="file" name="image" id="image" accept="image/*" onChange={handleImgChange}/>
             </div>
         </div>
     </Card>

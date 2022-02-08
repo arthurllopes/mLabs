@@ -1,0 +1,29 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em 1em;
+}
+.tableContainer {
+    border-spacing: 0 .875rem;
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-color: black;
+}
+.tableHeader{
+    background-color: #fff;
+    text-align: left;
+    
+}
+.rowItem {
+    padding: .5em;
+    border: 2px solid;
+    border-color: #eee;
+}
+.tableBody:nth-child {
+    background-color: #D6EEEE;
+}
+.link {
+    color: #1661F3;
+    text-decoration: underline;
+}

@@ -11,10 +11,20 @@ import PublicationDate from '../../components/PublicatioDate';
 import SocialMediaSelect from '../../components/SocialMediaSelect';
 import styles from './styles.module.css'
 import SucessModal from '../../components/SucessModal';
-import { ModalContext } from '../../contexts/ModalContext';
-
-const SchedulingPage = () => {
-    const {modal} = useContext(ModalContext)
+import { PostContext } from '../../contexts/PostContext';
+import { GetServerSideProps } from 'next';
+import api from '../../services/api';
+export type SocialApp = {
+    id: number,
+    name: string,
+    icon: string,
+    status: string,
+}
+type Props = {
+    socials: SocialApp[]
+}
+const SchedulingPage = ({socials}: Props) => {
+    const {modal} = useContext(PostContext)
 
   return (
         <>
@@ -25,7 +35,7 @@ const SchedulingPage = () => {
             <main className={styles.mainContainer}>
                 <div className={styles.post}>
                     <div className={styles.postInfo}>
-                        <SocialMediaSelect />
+                        <SocialMediaSelect socials={socials} />
                         <PublicationDate />
                     </div>
                     <div className={styles.postInfo}>
@@ -46,3 +56,17 @@ const SchedulingPage = () => {
 };
 
 export default SchedulingPage;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    
+    const res = await api.get('/social')
+    const {data} = res.data
+    const enabled = data.filter((item: SocialApp) => item.status === 'enabled')
+    const disabled = data.filter((item: SocialApp) => item.status !== 'enabled')
+    const socials = [...enabled, ...disabled]
+    return {
+        props: {
+            socials,
+        }
+    }
+}

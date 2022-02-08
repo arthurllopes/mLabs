@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { ModalContext } from '../../contexts/ModalContext';
+import { PostContext } from '../../contexts/PostContext';
 import styles from './styles.module.css'
 
 const ActionFooter = () => {
-    const {setModal} = useContext(ModalContext)
+    const {setModal, date, social} = useContext(PostContext)
     function handleSchedule () {
         setModal(true)
     }
@@ -16,7 +16,7 @@ const ActionFooter = () => {
                 <button className={`${styles.save} btn`}>
                     Salvar rascunho
                 </button>
-                <button className={`${styles.confirm} btn`} onClick={handleSchedule}>
+                <button className={`${styles.confirm} btn`} disabled={!social || !date.time || !date.date} onClick={handleSchedule}>
                     Agendar
                 </button>
         </div>

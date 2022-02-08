@@ -12,7 +12,10 @@ import {
   faTwitter
 } from '@fortawesome/free-brands-svg-icons';
 import { faCalendarDay, faClock } from '@fortawesome/free-solid-svg-icons';
-import { ModalContextProvider } from '../contexts/ModalContext';
+import { PostContextProvider } from '../contexts/PostContext';
+import { Provider } from 'react-redux'
+import store from '../redux/configureStore'
+
 
 library.add(fab,faLinkedin,
   faInstagram,
@@ -26,9 +29,11 @@ library.add(fab,faLinkedin,
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ModalContextProvider>
-      <Component {...pageProps} />
-    </ModalContextProvider>
+    <Provider store={store}>
+      <PostContextProvider>
+        <Component {...pageProps} />
+      </PostContextProvider>
+    </Provider>
     )
 }
 

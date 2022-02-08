@@ -1,35 +1,27 @@
-import React from 'react';
-import api from '../../services/api';
+import React, { useContext } from 'react';
 import Card from '../Card';
 import styles from './styles.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { SocialApp } from '../../pages/scheduling';
+import { PostContext } from '../../contexts/PostContext';
 
-type SocialApp = {
-  id: number,
-  name: string,
-  icon: string,
-  status: string,
+type Props = {
+  socials: SocialApp[]
 }
-const SocialMediaSelect = () => {
-  const [socials, setSocials] = React.useState<SocialApp[]>([])
-  React.useEffect(() => {
-    const getSocial = async () => {
-      const response = await api.get('/social')
-      const {data} = response.data
-
-      const enabled = data.filter((item: SocialApp) => item.status === 'enabled')
-      const disabled = data.filter((item: SocialApp) => item.status !== 'enabled')
-      setSocials([...enabled, ...disabled])
+const SocialMediaSelect = ({socials}: Props) => {
+  const {setSocial, social} = useContext(PostContext)
+  function handleChoseeSocial(social: SocialApp) {
+    if (social.status === 'enabled') {
+      setSocial(social)
     }
-    getSocial()
-  }, [])
+  }
   return (
     <Card title="Redes sociais">
         <div className={styles.container}>
-          {socials.map((social: SocialApp) => (
-            <div key={social.id} className={social.status === 'enabled' ? `${styles.social} ${styles.enabled}` : `${styles.social} ${styles.disabled}`}>
+          {socials.map((item: SocialApp) => (
+            <div key={item.id} onClick={() => handleChoseeSocial(item)} className={item.status === 'enabled' ? `${item.id}` === `${social?.id}` ? `${styles.social} ${styles.active}` : `${styles.social} ${styles.enabled}` : `${styles.social} ${styles.disabled}`} >
               {//@ts-ignore
-                <FontAwesomeIcon icon={['fab', `${social.icon}`]}/>
+                <FontAwesomeIcon icon={['fab', `${item.icon}`]}/>
               }
             </div>
           ))}
