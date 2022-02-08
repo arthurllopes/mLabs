@@ -6,18 +6,28 @@ import styles from './styles.module.css'
 
 const PostPreview = () => {
   return (
-    <Card title="Visualização do post">
-    <div className={styles.container}>
-      <div>
-        <p className={styles.previewText}>
-            Aguardando conteúdo. Informe os canais e as mídias desejadas para visualização.
-        </p>
-      </div>
-      <div className={styles.imagePreview}>
-        <Image src={NoPost} width={300} height={360} alt="No post image" objectFit='contain'/>
-      </div>
+    <>
+        <div className={`${styles.preview} btn-div`}>
+          <button>
+            Visualizar post
+          </button>
+        </div>
+
+    <div className={styles.card}>
+      <Card title="Visualização do post">
+        <div className={styles.container}>
+          <div>
+            <p className={styles.previewText}>
+                Aguardando conteúdo. Informe os canais e as mídias desejadas para visualização.
+            </p>
+          </div>
+          <div className={styles.imagePreview}>
+            <Image src={NoPost} width={300} height={360} alt="No post image" objectFit='contain'/>
+          </div>
+        </div>
+      </Card>
     </div>
-    </Card>
+    </>
   );
 };
 

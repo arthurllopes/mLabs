@@ -2,8 +2,8 @@ import Image from 'next/image';
 import React from 'react';
 import Card from '../Card';
 import styles from './styles.module.css'
-import calendar from '../../assets/images/calendar.png'
-import watch from '../../assets/images/watch.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarDay, faClock } from '@fortawesome/free-solid-svg-icons';
 
 
 const PublicationDate = () => {
@@ -11,11 +11,11 @@ const PublicationDate = () => {
     <Card title="Data de publicação">
         <div className={styles.container}>
             <div className={styles.info}>
-                <Image alt="Calendário" src={calendar} width={16} height={16} />
+                <FontAwesomeIcon icon={faCalendarDay}/>
                 <input className={styles.input} type="text" placeholder="DD/MM"/>
             </div>
             <div className={styles.info}>
-                <Image alt="Calendário" src={watch} width={16} height={16} />
+                <FontAwesomeIcon icon={faClock}/>
                 <input className={styles.input} type="text" placeholder="HH:MM"/>
             </div>
         </div>

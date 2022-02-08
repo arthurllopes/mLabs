@@ -2,7 +2,6 @@ import React from 'react';
 import api from '../../services/api';
 import Card from '../Card';
 import styles from './styles.module.css'
-import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 type SocialApp = {
@@ -29,7 +28,9 @@ const SocialMediaSelect = () => {
         <div className={styles.container}>
           {socials.map((social: SocialApp) => (
             <div key={social.id} className={social.status === 'enabled' ? `${styles.social} ${styles.enabled}` : `${styles.social} ${styles.disabled}`}>
-              <FontAwesomeIcon icon={['fab', `${social.icon}`]}/>
+              {//@ts-ignore
+                <FontAwesomeIcon icon={['fab', `${social.icon}`]}/>
+              }
             </div>
           ))}
         </div>

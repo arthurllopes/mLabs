@@ -1,4 +1,6 @@
-.container {
+.card {
+    display: flex;
+}.container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,9 +8,23 @@
 }
 .previewText {
     color: #828282;
-    width: 60%;
-    margin: 0 auto;
 }
 .imagePreview {
     padding: .5em 0;
+}
+.preview {
+    display: none;
+    width: 100%;
+    margin: 0;
+    border: 1px solid #E0812C;
+    color: #fff;
+    background-color: #F2994A;
+}
+@media only screen and (max-width: 600px) {
+    .preview {
+        display: block;
+    }
+    .card {
+        display: none;
+    }
 }

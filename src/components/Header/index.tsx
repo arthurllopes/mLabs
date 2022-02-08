@@ -8,14 +8,19 @@ import styles from './styles.module.css'
 const Header = () => {
   return (
         <header className={styles.headerContainer}>
-            <div>
+            <div className={styles.logo}>
                 <Image src={Logo} alt="mLabs Logo" width={115} height={50} objectFit='contain'/>
+            </div>
+            <div className={styles.hamburger}>
+                <div className={styles.hamburgerDiv}></div>
+                <div className={styles.hamburgerDiv}></div>
+                <div className={styles.hamburgerDiv}></div>
             </div>
             <div className={styles.userContainer}>
                 <div>
                     <Image src={User} alt="mLabs Logo" width={115} height={50} objectFit='contain'/>
                 </div>
-                <div>
+                <div className={styles.userName}>
                     <p>Anselmo Carlos</p>
                 </div>
             </div>

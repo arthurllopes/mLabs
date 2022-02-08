@@ -19,19 +19,19 @@ const SchedulingPage = () => {
             </Head>
             <Header />
             <main className={styles.mainContainer}>
-                <div className="post info">
+                <div className={styles.post}>
                     <div className={styles.postInfo}>
                         <SocialMediaSelect />
                         <PublicationDate />
                     </div>
-                    <div className="">
+                    <div className={styles.postInfo}>
                         <PostText />
                     </div>
-                    <div className="">
+                    <div className={styles.postInfo}>
                         <ImageUpload />
                     </div>
                 </div>
-                <div className="">
+                <div className={styles.postPreview}>
                     <PostPreview />
                 </div>
             </main>

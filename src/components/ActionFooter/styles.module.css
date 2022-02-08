@@ -27,3 +27,8 @@
     border: 1px solid #2F80ED;
     color: #FFFFFF;
 }
+@media only screen and (max-width: 600px) {
+    .actionFooter {
+        justify-content: center;    
+    }
+}
