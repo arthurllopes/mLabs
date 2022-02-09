@@ -11,7 +11,7 @@ const SocialMediaSelect = () => {
   const [socials, setSocials] = React.useState<SocialApp[]>([])
   React.useEffect(() => {
     const getSocials = async () => {
-      const response = await api.get('api/social')
+      const response = await api.get('/api/social')
       const {data} = response.data
 
       const enabled = data.filter((item: SocialApp) => item.status === 'enabled')
