@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mlabs desafio técnico Front End Jr
+Aplicação para agendar postagens em redes sociais.</br>
+Link da demo: 
 
-## Getting Started
+## Projeto Overview / Work Flow
+Comecei esse projeto organizando a estrutura básica de pastas e arquivos de acordo com o design. Na sequência, fiz o import de alguns assets do Figma e adicionei alguns estilos globais. Desenvolvi a página inicial completa por ser simples, a navegação entre páginas e montei o esqueleto base das páginas. Depois de separar os componentes, fiz o layout base e sua responsividade. Adicionei a ContextAPI porque o layout é bem componentizado, tendo acesso aos dados do post a ser agendado. Depois de ter esses dados, adicionei o Redux para gerenciar o estado dos posts agendados.
 
-First, run the development server:
+Projeto bem simples que exije um certo nível de conhecimento técnico para executar. Uma funcionalidade que adicionei foi a validação na data e hora com RegEx, e que se não estiver no formato esperado, aparece um texto de aviso. Se fosse um projeto longa vida, adicionaria autenticação na página incial, botões para editar e excluir posts agendados, e utilizaria styled components ou alguma outra lib CSS.
+ 
+![Mlabs](https://user-images.githubusercontent.com/82395681/153218086-2146893a-d039-4b0e-ac0d-ee607690455e.png)
+
+## 💻 Tecnologias
+ - [React](https://pt-br.reactjs.org/)
+ - [Nextjs](https://nextjs.org/)
+ - [Typescript](https://www.typescriptlang.org/)
+ - [Redux](https://redux.js.org/)
+ - [ReduxToolkit](https://redux-toolkit.js.org/)
+ - [Axios](https://axios-http.com/docs/intro)
+ - [FontAwesome](https://fontawesome.com/)
+
+# Instalação e uso
+
+### **Clone do projeto**
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Abra um terminal e copie este repositório com o comando
+$ git clone https://github.com/arthurllopes/mlabs.git
+# Entre na pasta do repositório clonado
+$ cd mlabs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **Iniciando o projeto**
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+# Instale as dependências
+npm install
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# Rode a aplicação
+npm run dev
+```
+<br>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### **Considerações**
 
-## Learn More
+Me considero júnior e me canditatei para nível júnior, acredito que realizei os requisitos do mesmo. Acho que consegueria atender os requisitos de pleno e Sênior neste desafio em especial. Pórem não tive muito tempo devido acontecimentos pessoais.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Autor
+Feito por Arthur Lopes 👋🏽 Entre em contato!
