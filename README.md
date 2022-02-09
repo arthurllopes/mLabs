@@ -35,6 +35,11 @@ $ cd mlabs
 # Instale as dependências
 npm install
 
+# Na raiz do projeto crie uma copia do arquivo .env.local.example
+# Altere o nome da copia para .env.local
+# Preencha as variáveis ambiente de acordo com as instruções
+$ cp .env.local.example .env.local
+
 # Rode a aplicação
 npm run dev
 ```
