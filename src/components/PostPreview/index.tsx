@@ -40,7 +40,7 @@ const PostPreview = () => {
                 Anselmo Carlos
               </div>
               <div>
-                <Image src={img?.preview} width={300} height={360} alt="post image" objectFit='contain'/>
+                <Image src={img?.preview} width={300} height={360} alt="post image" objectFit='cover'/>
               </div>
               <div className={styles.interact}>
                 <div>

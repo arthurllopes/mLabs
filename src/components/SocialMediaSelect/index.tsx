@@ -4,12 +4,23 @@ import styles from './styles.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SocialApp } from '../../pages/scheduling';
 import { PostContext } from '../../contexts/PostContext';
+import api from '../../services/api';
 
-type Props = {
-  socials: SocialApp[]
-}
-const SocialMediaSelect = ({socials}: Props) => {
+const SocialMediaSelect = () => {
   const {setSocial, social} = useContext(PostContext)
+  const [socials, setSocials] = React.useState<SocialApp[]>([])
+  React.useEffect(() => {
+    const getSocials = async () => {
+      const response = await api.get('/social')
+      const {data} = response.data
+
+      const enabled = data.filter((item: SocialApp) => item.status === 'enabled')
+      const disabled = data.filter((item: SocialApp) => item.status !== 'enabled')
+      setSocials([...enabled, ...disabled])
+    }
+    getSocials()
+  }, [])
+  
   function handleChoseeSocial(social: SocialApp) {
     if (social.status === 'enabled') {
       setSocial(social)

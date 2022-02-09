@@ -20,10 +20,7 @@ export type SocialApp = {
     icon: string,
     status: string,
 }
-type Props = {
-    socials: SocialApp[]
-}
-const SchedulingPage = ({socials}: Props) => {
+const SchedulingPage = () => {
     const {modal} = useContext(PostContext)
 
   return (
@@ -35,7 +32,7 @@ const SchedulingPage = ({socials}: Props) => {
             <main className={styles.mainContainer}>
                 <div className={styles.post}>
                     <div className={styles.postInfo}>
-                        <SocialMediaSelect socials={socials} />
+                        <SocialMediaSelect />
                         <PublicationDate />
                     </div>
                     <div className={styles.postInfo}>
@@ -57,16 +54,3 @@ const SchedulingPage = ({socials}: Props) => {
 
 export default SchedulingPage;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    
-    const res = await api.get('/social')
-    const {data} = res.data
-    const enabled = data.filter((item: SocialApp) => item.status === 'enabled')
-    const disabled = data.filter((item: SocialApp) => item.status !== 'enabled')
-    const socials = [...enabled, ...disabled]
-    return {
-        props: {
-            socials,
-        }
-    }
-}

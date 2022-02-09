@@ -28,7 +28,7 @@ const SchedulePage = () => {
                     </thead>
                     <tbody className={styles.tableBody}>
                         {posts?.map((post: SocialPost) => (
-                            <tr key={post.id}>
+                            <tr key={post.id} className={styles.tableRow}>
                                 <td className={`${styles.rowItem}`}>
                                     <div className={styles.icon}>
                                         {//@ts-ignore

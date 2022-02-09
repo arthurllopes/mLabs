@@ -13,15 +13,14 @@ const PublicationDate = () => {
     const timeRegex = new RegExp('^[0-2][0-3]:[0-5][0-9]$')
     function handleChange(item: string, value: string) {
         if(item === 'date') {
-            if (timeRegex.test(date.time) && dateError) {
-                setDateError(!dateRegex.test(value))
+            if (!timeRegex.test(date.time) && date.time !== '') {
+                
             } else {
                 setDateError(!dateRegex.test(value))
             }
         }
         if(item === 'time') {
-            if (dateRegex.test(date.date) && dateError) {
-                setDateError(!timeRegex.test(value))
+            if (!dateRegex.test(date.date) && date.date !== '') {
             } else {
                 setDateError(!timeRegex.test(value))
             }
