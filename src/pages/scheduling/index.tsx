@@ -22,6 +22,10 @@ export type SocialApp = {
 }
 const SchedulingPage = () => {
     const {modal} = useContext(PostContext)
+    const [aviso, setAviso] = React.useState(true)
+    setTimeout(() => {
+        setAviso(false)
+    }, 5000)
 
   return (
         <>
@@ -31,6 +35,7 @@ const SchedulingPage = () => {
             <Header />
             <main className={styles.mainContainer}>
                 <div className={styles.post}>
+                        {aviso && <p style={{backgroundColor: 'white'}}>Se os icones não carregarem da forma correta, atualize a página</p>}
                     <div className={styles.postInfo}>
                         <SocialMediaSelect />
                         <PublicationDate />
