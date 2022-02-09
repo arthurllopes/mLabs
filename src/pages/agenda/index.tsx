@@ -41,7 +41,7 @@ const SchedulePage = () => {
                                 </td>
                                 <td className={`${styles.rowItem} ${styles.text}`}>{post.text}</td>
                                 <td className={styles.rowItem}>{post.date.date}/20 ás {post.date.time}</td>
-                                <td className={styles.link}>Preview</td>
+                                <td className={`${styles.rowItem} ${styles.link}`}>Preview</td>
                                 <td className={styles.rowItem}>{post.status}</td>
                             </tr>
                         ))}
