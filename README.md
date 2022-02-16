@@ -1,6 +1,6 @@
 # Mlabs desafio técnico Front End Jr
 Aplicação para agendar postagens em redes sociais.</br>
-Link da demo: 
+Link da demo: nervous-montalcini-83c7ae.netlify.app/
 
 ## Projeto Overview / Work Flow
 Comecei esse projeto organizando a estrutura básica de pastas e arquivos de acordo com o design. Na sequência, fiz o import de alguns assets do Figma e adicionei alguns estilos globais. Desenvolvi a página inicial completa por ser simples, a navegação entre páginas e montei o esqueleto base das páginas. Depois de separar os componentes, fiz o layout base e sua responsividade. Adicionei a ContextAPI porque o layout é bem componentizado, tendo acesso aos dados do post a ser agendado. Depois de ter esses dados, adicionei o Redux para gerenciar o estado dos posts agendados.
